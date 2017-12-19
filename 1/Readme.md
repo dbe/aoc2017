@@ -1,3 +1,6 @@
+# AOC Link
+http://adventofcode.com/2017/day/2
+
 # Getting input
 After doing the advent of code from previous years, I decided I wanted to have a more elegant way to get input into my program. Instead of trying to copy paste from the website, or download and save as a file, I wanted to make a library which would fetch the correct input data given the day.
 
@@ -28,7 +31,7 @@ function main(input) {
 run(main, 1);
 ```
 
-# Thoughts
+# Imperative Solution
 Imperatively this is a very simple excercise. I did notice a nice improvement to my code after solving the second part of the excercise however. At first I considered the circular array aspect of the problem to just be a special case and handled it as such:
 
 ```javascript
@@ -50,4 +53,31 @@ Although this code jumped out at me as not very elegant, I decided not to overen
 -    sum += parseInt(input[0]);
 -  }
 -
+```
+
+# Functional Psuedocode
+The top level function for pretty much all of these AOC challenges has the signature of String -> Int. I will attempt to give a functional program flow for problems until I come back and program them in Haskell.
+
+```
+//Top level function taking input and outputting the answer
+part1 :: String -> Int
+
+//Creates a list of tuples for each pair of numbers which we should check
+pair :: String -> List (String, String)
+
+//Simple cast of String -> Int for the tuple
+cast :: (String, String) -> (Int, Int)
+
+//Checks the tuple to see if the two Ints are the same, if so it outputs that Int, otherwise 0
+evaluate :: (Int, Int) -> Int
+```
+
+Given these functions, we get a beautiful function definition for part1:
+
+```
+part1 input =
+  pair input
+  |> map cast
+  |> map evaluate
+  |> reduce sum
 ```
