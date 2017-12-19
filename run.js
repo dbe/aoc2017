@@ -9,7 +9,7 @@ function run(main, day) {
   }
 
   request(options, function(err, resp, body) {
-    main(body);
+    main(body.trim());
   });
 }
 
