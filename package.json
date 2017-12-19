@@ -1,0 +1,12 @@
+{
+  "name": "aoc2017",
+  "version": "1.0.0",
+  "description": "advent of code solutions",
+  "main": "index.js",
+  "author": "dbe",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "request": "^2.83.0"
+  }
+}
