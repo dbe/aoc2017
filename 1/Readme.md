@@ -37,4 +37,17 @@ if(input.length >= 2 && input[0] == input[input.length - 1]) {
   sum += parseInt(input[0]);
 }
 ```
-Although this code jumped out at me as not very elegant, I decided not to overengineer it. Once I saw the second part of the problem however, it became clear that indexing into the array with a mod would give the ciruclar nature intended. It would just get rid of the special case alltogether. This is actually a much more elegant solution.
+Although this code jumped out at me as not very elegant, I decided not to overengineer it. Once I saw the second part of the problem however, it became clear that indexing into the array with a mod would give the ciruclar nature intended. It would just get rid of the special case alltogether. This is actually a much more elegant solution:
+
+```diff
+-  for(var i = 0; i < input.length - 1; i++) {
+-    if(input[i] == input[i+1]) {
++  for(var i = 0; i < input.length; i++) {
++    if(input[i] == input[(i+1) % input.length]) {
+
+-  //Handle edge case for circular array
+-  if(input.length >= 2 && input[0] == input[input.length - 1]) {
+-    sum += parseInt(input[0]);
+-  }
+-
+```
