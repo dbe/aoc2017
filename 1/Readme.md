@@ -1,5 +1,5 @@
 # AOC Link
-http://adventofcode.com/2017/day/2
+http://adventofcode.com/2017/day/1
 
 # Getting input
 After doing the advent of code from previous years, I decided I wanted to have a more elegant way to get input into my program. Instead of trying to copy paste from the website, or download and save as a file, I wanted to make a library which would fetch the correct input data given the day.
